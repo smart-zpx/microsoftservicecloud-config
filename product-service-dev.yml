@@ -1,0 +1,22 @@
+server:
+  port: 8771
+
+
+spring:
+  application:
+    name: product
+    #zipkin 服务所在地址
+  zipkin:
+      base-url: http://47.100.235.60:9411/
+    #配置采样百分比(开发环境可以配置为1，采集所有的)
+  sleuth:
+      sampler:
+        probability: 1
+
+  #把自己注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+ env: dev
+ branch: dev
